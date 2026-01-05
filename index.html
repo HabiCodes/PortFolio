@@ -1,165 +1,263 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Habishek — Swift iOS developer. I build fast, clean, and delightful apps." />
+  <title>Habishek — Swift Developer</title>
 
-<!-- SEO -->  
-<title>Habishek</title>
-
-<!-- Favicon -->   
-<link rel="icon" href="social_apple_macbook_iphone_icon_131212.ico" sizes="any" />
-
-<!-- Styles + JS -->    
-<link rel="preload" href="styles.css?v=0.8" as="style" />
-<link rel="stylesheet" href="colors.css?v=0.8" /> 
-<link rel="stylesheet" href="styles.css?v=0.8" />  
-<script defer src="siema.min.js?v=0.8"></script>
-<script defer src="main.js?v=0.8"></script>
-
+  <link rel="icon" href="social_apple_macbook_iphone_icon_131212.ico" sizes="any" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="scheme-midnight">
-<div id="mouse-follower"></div>
-<header class="top">
-  <div class="top__left">
-    <img class="top__avatar" src="h1.png" alt="Name" />
-    <span class="top__brand">HABISHEK</span>
-  </div>
-  <nav class="top__right">
-  	<div class="links">
-	    <a href="#about" class="top__link">Info</a>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav glass">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <img class="brand__avatar" src="h1.png" alt="Habishek avatar" />
+        <span class="brand__name">HABISHEK</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">Info</a>
+        <a class="btn btn--primary" href="resume.png" target="_blank" rel="noopener">Resume →</a>
+      </nav>
     </div>
-    <a href="resume.png" class="top__cta" target="_blank">
-    Resume<span class="arrow">→</span>
-</a>
-  </nav>
-</header>
-<section class="hero">
-  <div class="boxed">
-    <span class="eyebrow">hey there!</span>
-    <h1 class="overview">I'm Habishek , a Swift app developer who combines code and creativity to build seamless, intuitive, and engaging mobile experiences.</h1><br><br>
-  </div>
-</section>
+  </header>
 
-<!-- Portfolio start -->
-<section> 
-  <div class="boxed">
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Swift • SwiftUI • Firebase • WebRTC</p>
+          <h1 class="title">
+            I build seamless iOS experiences with clean architecture and bold UI.
+          </h1>
+          <p class="subtitle">
+            Swift app developer with a hacker’s curiosity — shipping fast, secure, and polished products.
+          </p>
 
-    <!-- Project start -->
-    <div class="slider-group">
-      <div class="siema-wrapper"> 
-        <div class="siema" data-slider="sphere-1">
-          <div><img src="Firebase/Screenshot 2025-11-09 at 10.22.01 PM.png" alt="Slide alt text" /></div>
-          <div><img src="Firebase/Screenshot 2025-11-09 at 10.24.38 PM.png" alt="Slide alt text" /></div>
-          <div><img src="Firebase/Screenshot 2025-11-09 at 10.26.04 PM.png" alt="Slide alt text" /></div>  
-          <div><img src="Firebase/Screenshot 2025-11-09 at 10.39.46 PM.png" alt="Slide alt text" /></div>        
-        </div>   
-      </div>
-      <span class="slider-controls">
-        <button class="prev" aria-label="Previous slide">Prev</button>
-        <button class="next" aria-label="Next slide">Next</button> 
-      </span> 
-    </div>
-    <h2 class="slider-heading">Google API with Firebase</h2>
-    <p>Built a real-time chat and voice calling app using Firebase and WebRTC, featuring seamless cross-device communication with advanced call management.</p>
-   <blockquote><p>This is my first project</p></blockquote>      
-    <!--<p><a href="" class="cta-project" title="Visit custom link">Visit →</a></p>-->
-    <hr />
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#work">See projects</a>
+            <a class="btn btn--ghost" href="#about">About me</a>
+          </div>
 
-      <div class="slider-group">
-        <div class="siema-wrapper"> 
-          <div class="siema" data-slider="sphere-1">
-            <div><img src="Firebasegame/Screenshot 2025-11-09 at 10.41.45 PM.png" alt="Slide alt text" /></div>
-            <div><img src="Firebasegame/Screenshot 2025-11-09 at 10.41.57 PM.png" alt="Slide alt text" /></div>
-            <div><img src="Firebasegame/Screenshot 2025-11-09 at 10.42.38 PM.png" alt="Slide alt text" /></div>
-          </div>   
+          <div class="hero__meta glass glass--thin">
+            <div class="meta">
+              <span class="meta__k">Focus</span>
+              <span class="meta__v">Performance + UX polish</span>
+            </div>
+            <div class="meta">
+              <span class="meta__k">Stack</span>
+              <span class="meta__v">SwiftUI, Firebase, Python</span>
+            </div>
+            <div class="meta">
+              <span class="meta__k">Location</span>
+              <span class="meta__v">Chennai, IN</span>
+            </div>
+          </div>
         </div>
-        <span class="slider-controls">
-          <button class="prev" aria-label="Previous slide">Prev</button>
-          <button class="next" aria-label="Next slide">Next</button> 
-        </span> 
-      </div>
-      <h2 class="slider-heading">Truth or Dare using Firebase</h2>
-      <p>Implemented seamless Google authentication using Firebase, ensuring secure login flow, token management, and smooth integration with iOS UI components.</p>
-    <blockquote><p>This is my second project</p></blockquote>      
-      <!--<p><a href="" class="cta-project" title="Visit custom link">Visit →</a></p>-->
-      <hr />
 
-      <div class="slider-group">
-        <div class="siema-wrapper"> 
-          <div class="siema" data-slider="sphere-1">
-            <div><img src="game/Screenshot 2025-11-09 at 10.26.10 PM.png" alt="Slide alt text" /></div>
-            <div><img src="game/Screenshot 2025-11-09 at 10.27.11 PM.png" alt="Slide alt text" /></div>
-            <div><img src="game/Screenshot 2025-11-09 at 10.27.29 PM.png" alt="Slide alt text" /></div>
-            <div><img src="game/Screenshot 2025-11-09 at 10.27.45 PM.png" alt="Slide alt text" /></div>
-          </div>   
-        </div>
-        <span class="slider-controls">
-          <button class="prev" aria-label="Previous slide">Prev</button>
-          <button class="next" aria-label="Next slide">Next</button> 
-        </span> 
-      </div>
-      <h2 class="slider-heading">Game using Swift UI</h2>
-      <p>Developed an engaging 2D game with a modular Game Manager and dynamic state handling, featuring smooth UI animations and scalable Swift architecture.</p>
-    <blockquote><p>This is my third project</p></blockquote>      
-      <!--<p><a href="" class="cta-project" title="Visit custom link">Visit →</a></p>-->
-      <hr />
-
-
-    <!-- Project start -->
-    <div class="slider-group">
-      <div class="siema-wrapper"> 
-        <div class="siema" data-slider="sphere-2">
-          <div><img src="notes/Screenshot 2025-11-09 at 10.30.52 PM.png" alt="Slide alt text" /></div>
-          <div><img src="notes/Screenshot 2025-11-09 at 10.31.32 PM.png" alt="Slide alt text" /></div>
-          <div><img src="notes/Screenshot 2025-11-09 at 10.32.16 PM.png" alt="Slide alt text" /></div>         
-        </div>  
-      </div> 
-      <span class="slider-controls">
-        <button class="prev" aria-label="Previous slide">Prev</button>
-        <button class="next" aria-label="Next slide">Next</button> 
-      </span> 
-    </div>
-    <h2 class="slider-heading">Notes Application with user defaults</h2>   
-    <p>Created a secure and elegant notes app with password-protected entries, smooth UI transitions, and efficient local data handling.</p>
-    <blockquote><p>This is my fourth project</p></blockquote> 
-    <!--<p><a href="" class="cta-project" title="Visit custom link">Visit →</a></p>-->
-    <hr/>
-  </div>
-
-   
-</section>
-<!-- Portfolio end -->
-
-<section class="bg-alt"> 
-  <div class="bio-section">
-      <div class="bio-image" id="about">
-        <img src="h2.png" alt="Author" />
-      </div>
-      <div class="bio-text">
-        <p>
-A Swift developer with a hacker’s curiosity, weaving code, logic, and innovation to build seamless, intelligent apps. Skilled in Python, crafting digital experiences that are not just functional but smart, interactive, and alive — where creativity meets precision.
-        </p>
-        <div class="bio-links">
-          <ul>      
-            <li><a href="https://wa.me/918754022178" target="_blank">WhatsApp</a></li>
-            <li><a href="https://www.instagram.com/iamtitancore/">Instagram</a></li>              
-          </ul>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/habishek-b-703109371">LinkedIn</a></li>
-            <li><a href="mailto:habishekiosdevloper@gmail.com">Mail Me</a></li>
-          </ul>
+        <div class="hero__art glass">
+          <div class="orb orb--a"></div>
+          <div class="orb orb--b"></div>
+          <div class="hero__card">
+            <p class="hero__cardTag">Currently building</p>
+            <p class="hero__cardTitle">Real‑time chat + calling</p>
+            <p class="hero__cardText">Low-latency UI, stable signaling, clean state management.</p>
+            <div class="hero__chips">
+              <span class="chip">WebRTC</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">SwiftUI</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-</section>
-<footer class="site-footer">
-  <p class="footer-left">© 2025 <a href="https://www.instagram.com/batvrld" target="_blank">batvrld</a></p>
-  <p class="footer-right">
-  Designed & Developed by 
-  <a href="https://visionary-souffle-715d35.netlify.app" target="_blank">SHYAM</a> 
-</p>
+    </section>
 
-</footer>
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Selected work</h2>
+          <p class="section__desc">Swipe screenshots horizontally (no JS). Tap images to open in new tab.</p>
+        </div>
+
+        <!-- PROJECT 1 -->
+        <article class="project glass">
+          <header class="project__head">
+            <div>
+              <h3 class="project__title">Google API + Firebase (Chat + Voice Calling)</h3>
+              <p class="project__desc">
+                Real-time chat + voice calling with cross-device sessions and call management.
+              </p>
+            </div>
+            <div class="project__badges">
+              <span class="pill">Firebase</span>
+              <span class="pill">WebRTC</span>
+              <span class="pill">iOS</span>
+            </div>
+          </header>
+
+          <div class="shots" aria-label="Project screenshots">
+            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.22.01 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.22.01 PM.png" alt="Chat screen" />
+            </a>
+            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.24.38 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.24.38 PM.png" alt="Call UI" />
+            </a>
+            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.26.04 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.26.04 PM.png" alt="Contacts / rooms" />
+            </a>
+            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.39.46 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.39.46 PM.png" alt="Settings" />
+            </a>
+          </div>
+
+          <footer class="project__foot">
+            <p class="quote">“My first project.”</p>
+            <!-- Optional: add project link -->
+            <!-- <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Live →</a> -->
+          </footer>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project glass">
+          <header class="project__head">
+            <div>
+              <h3 class="project__title">Truth or Dare (Firebase Auth)</h3>
+              <p class="project__desc">
+                Secure Google login flow, token handling, and smooth iOS UI integration.
+              </p>
+            </div>
+            <div class="project__badges">
+              <span class="pill">Auth</span>
+              <span class="pill">Firebase</span>
+              <span class="pill">SwiftUI</span>
+            </div>
+          </header>
+
+          <div class="shots" aria-label="Project screenshots">
+            <a class="shot" href="Firebasegame/Screenshot 2025-11-09 at 10.41.45 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebasegame/Screenshot 2025-11-09 at 10.41.45 PM.png" alt="Home screen" />
+            </a>
+            <a class="shot" href="Firebasegame/Screenshot 2025-11-09 at 10.41.57 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebasegame/Screenshot 2025-11-09 at 10.41.57 PM.png" alt="Game screen" />
+            </a>
+            <a class="shot" href="Firebasegame/Screenshot 2025-11-09 at 10.42.38 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="Firebasegame/Screenshot 2025-11-09 at 10.42.38 PM.png" alt="Auth flow" />
+            </a>
+          </div>
+
+          <footer class="project__foot">
+            <p class="quote">“My second project.”</p>
+          </footer>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project glass">
+          <header class="project__head">
+            <div>
+              <h3 class="project__title">2D Game (SwiftUI)</h3>
+              <p class="project__desc">
+                Modular game manager, dynamic state handling, and smooth UI animation patterns.
+              </p>
+            </div>
+            <div class="project__badges">
+              <span class="pill">Game</span>
+              <span class="pill">SwiftUI</span>
+              <span class="pill">Architecture</span>
+            </div>
+          </header>
+
+          <div class="shots" aria-label="Project screenshots">
+            <a class="shot" href="game/Screenshot 2025-11-09 at 10.26.10 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.26.10 PM.png" alt="Game screen 1" />
+            </a>
+            <a class="shot" href="game/Screenshot 2025-11-09 at 10.27.11 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.27.11 PM.png" alt="Game screen 2" />
+            </a>
+            <a class="shot" href="game/Screenshot 2025-11-09 at 10.27.29 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.27.29 PM.png" alt="Game screen 3" />
+            </a>
+            <a class="shot" href="game/Screenshot 2025-11-09 at 10.27.45 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.27.45 PM.png" alt="Game screen 4" />
+            </a>
+          </div>
+
+          <footer class="project__foot">
+            <p class="quote">“My third project.”</p>
+          </footer>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project glass">
+          <header class="project__head">
+            <div>
+              <h3 class="project__title">Notes App (UserDefaults + Lock)</h3>
+              <p class="project__desc">
+                Password-protected notes, clean transitions, and efficient local data handling.
+              </p>
+            </div>
+            <div class="project__badges">
+              <span class="pill">Local</span>
+              <span class="pill">Security</span>
+              <span class="pill">UIKit/SwiftUI</span>
+            </div>
+          </header>
+
+          <div class="shots" aria-label="Project screenshots">
+            <a class="shot" href="notes/Screenshot 2025-11-09 at 10.30.52 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="notes/Screenshot 2025-11-09 at 10.30.52 PM.png" alt="Notes list" />
+            </a>
+            <a class="shot" href="notes/Screenshot 2025-11-09 at 10.31.32 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="notes/Screenshot 2025-11-09 at 10.31.32 PM.png" alt="Note detail" />
+            </a>
+            <a class="shot" href="notes/Screenshot 2025-11-09 at 10.32.16 PM.png" target="_blank" rel="noopener">
+              <img loading="lazy" src="notes/Screenshot 2025-11-09 at 10.32.16 PM.png" alt="Lock screen" />
+            </a>
+          </div>
+
+          <footer class="project__foot">
+            <p class="quote">“My fourth project.”</p>
+          </footer>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" class="section section--alt">
+      <div class="container about">
+        <div class="about__media glass">
+          <img loading="lazy" src="h2.png" alt="Habishek portrait" />
+        </div>
+
+        <div class="about__text">
+          <h2 class="section__title">Info</h2>
+          <p class="about__bio glass glass--thin">
+            A Swift developer with a hacker’s curiosity, weaving code, logic, and innovation to build seamless, intelligent apps.
+            Skilled in Python — building products that feel fast, modern, and alive.
+          </p>
+
+          <div class="links glass glass--thin">
+            <a href="https://wa.me/918754022178" target="_blank" rel="noopener">WhatsApp →</a>
+            <a href="https://www.instagram.com/iamtitancore/" target="_blank" rel="noopener">Instagram →</a>
+            <a href="https://www.linkedin.com/in/habishek-b-703109371" target="_blank" rel="noopener">LinkedIn →</a>
+            <a href="mailto:habishekiosdevloper@gmail.com">Mail →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner glass glass--thin">
+      <p>© 2026 Habishek</p>
+      <p class="muted">Designed & developed with HTML + CSS only.</p>
+    </div>
+  </footer>
 </body>
 </html>

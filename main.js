@@ -1,97 +1,166 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const sliderGroups = document.querySelectorAll('.slider-group');
+(function() {
+  'use strict';
 
-  sliderGroups.forEach((group) => {
-    const sliderEl = group.querySelector('.siema');
+  // --- DOM ready ---
+  document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initScrollReveal();
+    initMouseFollower();
+    initRotatingBadges(); // optional, if we keep the CSS-only rotator we don't need JS
+    // (Siema is removed, we use CSS + lightbox)
+  });
 
-    const siema = new Siema({
-      selector: sliderEl,
-      duration: 400,
-      easing: 'ease-out',
-      perPage: 1,
-      loop: true
+  // --- Lightbox ---
+  function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('.lightbox__img');
+    const lightboxCaption = lightbox.querySelector('.lightbox__caption');
+    const closeBtn = lightbox.querySelector('.lightbox__close');
+    const prevBtn = lightbox.querySelector('.lightbox__prev');
+    const nextBtn = lightbox.querySelector('.lightbox__next');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    // Attach click to all .shot links
+    const shots = document.querySelectorAll('.shot');
+    shots.forEach((shot, idx) => {
+      shot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const projectShots = shot.closest('.shots');
+        const projectLinks = Array.from(projectShots.querySelectorAll('.shot'));
+        currentImages = projectLinks.map(link => ({
+          src: link.getAttribute('href'),
+          caption: link.dataset.caption || ''
+        }));
+        currentIndex = projectLinks.indexOf(shot);
+        openLightbox();
+      });
     });
 
-    // No autoplay 🎉
-
-    // Buttons scoped to this group
-    const prevBtn = group.querySelector('.prev');
-    const nextBtn = group.querySelector('.next');
-
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => siema.prev());
-      nextBtn.addEventListener('click', () => siema.next());
+    function openLightbox() {
+      if (!currentImages.length) return;
+      updateLightboxImage();
+      lightbox.classList.add('lightbox--visible');
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', handleKeyDown);
     }
-  });
-});
-document.addEventListener('DOMContentLoaded', () => {
+
+    function closeLightbox() {
+      lightbox.classList.remove('lightbox--visible');
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    function updateLightboxImage() {
+      const img = currentImages[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.caption;
+      lightboxCaption.textContent = img.caption;
+    }
+
+    function showPrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateLightboxImage();
+      }
+    }
+
+    function showNext() {
+      if (currentIndex < currentImages.length - 1) {
+        currentIndex++;
+        updateLightboxImage();
+      }
+    }
+
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    // Close on overlay click (but not on image)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  // --- Scroll reveal (IntersectionObserver) ---
+  function initScrollReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target); // only once
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  }
+
+  // --- Mouse follower (lerp) ---
+  function initMouseFollower() {
     const follower = document.getElementById('mouse-follower');
-    
-    // Check for mobile screen
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    if (isMobile) {
-        return; 
+    if (!follower) return;
+
+    // disable on touch devices
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
     }
 
-    // Target coordinates (where the mouse currently is)
-    let targetX = 0;
-    let targetY = 0;
-    
-    // Follower coordinates (where the dot is rendered)
-    let currentX = 0;
-    let currentY = 0;
-    
-    // **THE DELAY FACTOR (CLOSENESS)**
-    // A smaller value (e.g., 0.05) creates a bigger lag/delay.
-    // A value near 1 is immediate. 0.1 gives a nice, noticeable drag.
-    const lerpFactor = 0.1; 
-
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    const lerpFactor = 0.12;
     let isVisible = false;
 
-    // 1. Update Target Coordinates on Mouse Move
-    document.addEventListener('mousemove', (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-
-        if (!isVisible) {
-            follower.style.opacity = '1';
-            isVisible = true;
-        }
-    });
-
-    // 2. The Lerp Function (Smooths the movement)
     function lerp(start, end, factor) {
-        return start + (end - start) * factor;
+      return start + (end - start) * factor;
     }
 
-    // 3. Animation Loop (Applies the delay)
     function animate() {
-        // Interpolate the current position towards the target position
-        currentX = lerp(currentX, targetX, lerpFactor);
-        currentY = lerp(currentY, targetY, lerpFactor);
-
-        // Apply the new, smoothed position
-        follower.style.left = currentX + 'px';
-        follower.style.top = currentY + 'px';
-
-        // Request the next frame for smooth animation
-        requestAnimationFrame(animate);
+      currentX = lerp(currentX, targetX, lerpFactor);
+      currentY = lerp(currentY, targetY, lerpFactor);
+      follower.style.left = currentX + 'px';
+      follower.style.top = currentY + 'px';
+      requestAnimationFrame(animate);
     }
-
-    // Start the animation loop
     animate();
 
-    // Optional: Fade out the dot when the mouse leaves the page viewport
-    document.addEventListener('mouseleave', () => {
-        follower.style.opacity = '0';
-        isVisible = false;
+    document.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      if (!isVisible) {
+        follower.classList.add('mouse-follower--visible');
+        isVisible = true;
+      }
     });
 
-    document.addEventListener('mouseenter', () => {
-        // Reset current position to target for instant appearance on re-entry
-        currentX = targetX;
-        currentY = targetY;
-        follower.style.opacity = '1';
-        isVisible = true;
+    document.addEventListener('mouseleave', () => {
+      follower.classList.remove('mouse-follower--visible');
+      isVisible = false;
     });
-});
+  }
+
+  // Optional: rotating badges (already in CSS, but we can pause on hover)
+  function initRotatingBadges() {
+    const rotator = document.querySelector('.hero__badge-rotator');
+    if (!rotator) return;
+    rotator.addEventListener('mouseenter', () => {
+      rotator.style.animationPlayState = 'paused';
+    });
+    rotator.addEventListener('mouseleave', () => {
+      rotator.style.animationPlayState = 'running';
+    });
+  }
+
+})();

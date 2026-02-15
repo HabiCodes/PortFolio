@@ -1,0 +1,32 @@
+{
+  "comment": "Place optimized WebP images in /assets/optimized/. Generate from originals with squoosh or cwebp.",
+  "breakpoints": [400, 800, 1200, 1600],
+  "images": [
+    { "original": "h1.png", "sizes": [80, 160], "webp": true, "fallback": "png" },
+    { "original": "h2.png", "sizes": [400, 800, 1200], "webp": true, "fallback": "png" },
+    { "original": "resume.png", "pdf": true, "note": "Use original PDF, optimize with Ghostscript" },
+    { "group": "Firebase", "files": [
+      "Screenshot 2025-11-09 at 10.22.01 PM.png",
+      "Screenshot 2025-11-09 at 10.24.38 PM.png",
+      "Screenshot 2025-11-09 at 10.26.04 PM.png",
+      "Screenshot 2025-11-09 at 10.39.46 PM.png"
+    ], "output": ["firebase-chat", "firebase-call", "firebase-contacts", "firebase-settings"] },
+    { "group": "Firebasegame", "files": [
+      "Screenshot 2025-11-09 at 10.41.45 PM.png",
+      "Screenshot 2025-11-09 at 10.41.57 PM.png",
+      "Screenshot 2025-11-09 at 10.42.38 PM.png"
+    ], "output": ["game-home", "game-play", "game-auth"] },
+    { "group": "game", "files": [
+      "Screenshot 2025-11-09 at 10.26.10 PM.png",
+      "Screenshot 2025-11-09 at 10.27.11 PM.png",
+      "Screenshot 2025-11-09 at 10.27.29 PM.png",
+      "Screenshot 2025-11-09 at 10.27.45 PM.png"
+    ], "output": ["game2d-1", "game2d-2", "game2d-3", "game2d-4"] },
+    { "group": "notes", "files": [
+      "Screenshot 2025-11-09 at 10.30.52 PM.png",
+      "Screenshot 2025-11-09 at 10.31.32 PM.png",
+      "Screenshot 2025-11-09 at 10.32.16 PM.png"
+    ], "output": ["notes-list", "notes-detail", "notes-lock"] }
+  ],
+  "ogPreview": { "original": "h2.png", "output": "og-preview.jpg", "size": "1200x630" }
+}

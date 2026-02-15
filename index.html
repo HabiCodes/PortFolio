@@ -1,30 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="description" content="Habishek — Swift iOS developer. I build fast, clean, and delightful apps." />
-  <title>Habishek — Swift Developer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Habishek — Swift iOS developer and video editor. I build fast, secure, and cinematic apps that convert.">
+  <title>Habishek – Swift Developer & Editor</title>
 
-  <link rel="icon" href="social_apple_macbook_iphone_icon_131212.ico" sizes="any" />
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Habishek – Swift iOS Developer & Editor">
+  <meta property="og:description" content="Fast, polished apps + cinematic editing. Let’s build something great.">
+  <meta property="og:image" content="assets/optimized/og-preview.jpg">
+  <meta property="og:url" content="https://habishek.dev">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="social_apple_macbook_iphone_icon_131212.ico" sizes="any">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
-
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="nav glass">
     <div class="nav__inner">
       <a class="brand" href="#top" aria-label="Home">
-        <img class="brand__avatar" src="h1.png" alt="Habishek avatar" />
+        <img class="brand__avatar" src="assets/optimized/h1-80w.webp" alt="Habishek avatar" width="44" height="44">
         <span class="brand__name">HABISHEK</span>
       </a>
 
       <nav class="nav__links" aria-label="Primary">
         <a href="#work">Work</a>
         <a href="#about">Info</a>
-        <a class="btn btn--primary" href="resume.png" target="_blank" rel="noopener">Resume →</a>
+        <a class="btn btn--primary" href="assets/optimized/resume.pdf" target="_blank" rel="noopener noreferrer">Resume →</a>
       </nav>
     </div>
   </header>
@@ -33,23 +42,23 @@
     <section id="top" class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow">Swift • SwiftUI • Firebase • WebRTC</p>
+          <p class="eyebrow">Swift • SwiftUI • Firebase • DaVinci Resolve</p>
           <h1 class="title">
-            I build seamless iOS experiences with clean architecture and bold UI.
+            I build fast, secure iOS apps <span class="title-break"> & cinematic edits that convert.</span>
           </h1>
           <p class="subtitle">
-            Swift app developer with a hacker’s curiosity — shipping fast, secure, and polished products.
+            Swift developer with a hacker’s curiosity — shipping polished products and high‑impact video.
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#work">See projects</a>
-            <a class="btn btn--ghost" href="#about">About me</a>
+            <a class="btn btn--primary" href="#work">See projects →</a>
+            <a class="btn btn--ghost" href="#about">Hire / Contact</a>
           </div>
 
           <div class="hero__meta glass glass--thin">
             <div class="meta">
               <span class="meta__k">Focus</span>
-              <span class="meta__v">Performance + UX polish</span>
+              <span class="meta__v">Performance + UX</span>
             </div>
             <div class="meta">
               <span class="meta__k">Stack</span>
@@ -66,14 +75,17 @@
           <div class="orb orb--a"></div>
           <div class="orb orb--b"></div>
           <div class="hero__card">
-            <p class="hero__cardTag">Currently building</p>
+            <p class="hero__cardTag">⚡️ currently building</p>
             <p class="hero__cardTitle">Real‑time chat + calling</p>
-            <p class="hero__cardText">Low-latency UI, stable signaling, clean state management.</p>
+            <p class="hero__cardText">Low‑latency UI, stable signaling, clean state management.</p>
             <div class="hero__chips">
               <span class="chip">WebRTC</span>
               <span class="chip">Firebase</span>
               <span class="chip">SwiftUI</span>
             </div>
+          </div>
+          <div class="hero__badge-rotator" aria-hidden="true">
+            <span>Fast</span><span>Secure</span><span>Polished</span>
           </div>
         </div>
       </div>
@@ -83,16 +95,16 @@
       <div class="container">
         <div class="section__head">
           <h2 class="section__title">Selected work</h2>
-          <p class="section__desc">Swipe screenshots horizontally (no JS). Tap images to open in new tab.</p>
+          <p class="section__desc">Click any screenshot to open lightbox (keyboard‑friendly).</p>
         </div>
 
         <!-- PROJECT 1 -->
-        <article class="project glass">
+        <article class="project glass reveal">
           <header class="project__head">
             <div>
               <h3 class="project__title">Google API + Firebase (Chat + Voice Calling)</h3>
               <p class="project__desc">
-                Real-time chat + voice calling with cross-device sessions and call management.
+                Real‑time chat + voice calling with cross‑device sessions and call management.
               </p>
             </div>
             <div class="project__badges">
@@ -102,30 +114,29 @@
             </div>
           </header>
 
-          <div class="shots" aria-label="Project screenshots">
-            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.22.01 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.22.01 PM.png" alt="Chat screen" />
+          <div class="shots" data-project="project1" aria-label="Project screenshots">
+            <a href="assets/optimized/firebase-chat-1600w.webp" class="shot" data-index="0" data-caption="Chat screen">
+              <img src="assets/optimized/firebase-chat-400w.webp" srcset="assets/optimized/firebase-chat-400w.webp 400w, assets/optimized/firebase-chat-800w.webp 800w, assets/optimized/firebase-chat-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Chat screen" width="400" height="300">
             </a>
-            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.24.38 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.24.38 PM.png" alt="Call UI" />
+            <a href="assets/optimized/firebase-call-1600w.webp" class="shot" data-index="1" data-caption="Call UI">
+              <img src="assets/optimized/firebase-call-400w.webp" srcset="assets/optimized/firebase-call-400w.webp 400w, assets/optimized/firebase-call-800w.webp 800w, assets/optimized/firebase-call-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Call UI">
             </a>
-            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.26.04 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.26.04 PM.png" alt="Contacts / rooms" />
+            <a href="assets/optimized/firebase-contacts-1600w.webp" class="shot" data-index="2" data-caption="Contacts / rooms">
+              <img src="assets/optimized/firebase-contacts-400w.webp" srcset="assets/optimized/firebase-contacts-400w.webp 400w, assets/optimized/firebase-contacts-800w.webp 800w, assets/optimized/firebase-contacts-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Contacts / rooms">
             </a>
-            <a class="shot" href="Firebase/Screenshot 2025-11-09 at 10.39.46 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebase/Screenshot 2025-11-09 at 10.39.46 PM.png" alt="Settings" />
+            <a href="assets/optimized/firebase-settings-1600w.webp" class="shot" data-index="3" data-caption="Settings">
+              <img src="assets/optimized/firebase-settings-400w.webp" srcset="assets/optimized/firebase-settings-400w.webp 400w, assets/optimized/firebase-settings-800w.webp 800w, assets/optimized/firebase-settings-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Settings">
             </a>
           </div>
 
           <footer class="project__foot">
             <p class="quote">“My first project.”</p>
-            <!-- Optional: add project link -->
-            <!-- <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Live →</a> -->
+            <a class="btn btn--ghost" href="#" aria-label="Live demo (not available)">Live →</a>
           </footer>
         </article>
 
         <!-- PROJECT 2 -->
-        <article class="project glass">
+        <article class="project glass reveal">
           <header class="project__head">
             <div>
               <h3 class="project__title">Truth or Dare (Firebase Auth)</h3>
@@ -140,25 +151,26 @@
             </div>
           </header>
 
-          <div class="shots" aria-label="Project screenshots">
-            <a class="shot" href="Firebasegame/Screenshot 2025-11-09 at 10.41.45 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebasegame/Screenshot 2025-11-09 at 10.41.45 PM.png" alt="Home screen" />
+          <div class="shots" data-project="project2" aria-label="Project screenshots">
+            <a href="assets/optimized/game-home-1600w.webp" class="shot" data-index="0" data-caption="Home screen">
+              <img src="assets/optimized/game-home-400w.webp" srcset="assets/optimized/game-home-400w.webp 400w, assets/optimized/game-home-800w.webp 800w, assets/optimized/game-home-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Home screen">
             </a>
-            <a class="shot" href="Firebasegame/Screenshot 2025-11-09 at 10.41.57 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebasegame/Screenshot 2025-11-09 at 10.41.57 PM.png" alt="Game screen" />
+            <a href="assets/optimized/game-play-1600w.webp" class="shot" data-index="1" data-caption="Game screen">
+              <img src="assets/optimized/game-play-400w.webp" srcset="assets/optimized/game-play-400w.webp 400w, assets/optimized/game-play-800w.webp 800w, assets/optimized/game-play-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Game screen">
             </a>
-            <a class="shot" href="Firebasegame/Screenshot 2025-11-09 at 10.42.38 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="Firebasegame/Screenshot 2025-11-09 at 10.42.38 PM.png" alt="Auth flow" />
+            <a href="assets/optimized/game-auth-1600w.webp" class="shot" data-index="2" data-caption="Auth flow">
+              <img src="assets/optimized/game-auth-400w.webp" srcset="assets/optimized/game-auth-400w.webp 400w, assets/optimized/game-auth-800w.webp 800w, assets/optimized/game-auth-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Auth flow">
             </a>
           </div>
 
           <footer class="project__foot">
             <p class="quote">“My second project.”</p>
+            <a class="btn btn--ghost" href="#" aria-label="Live demo (not available)">Live →</a>
           </footer>
         </article>
 
         <!-- PROJECT 3 -->
-        <article class="project glass">
+        <article class="project glass reveal">
           <header class="project__head">
             <div>
               <h3 class="project__title">2D Game (SwiftUI)</h3>
@@ -173,33 +185,34 @@
             </div>
           </header>
 
-          <div class="shots" aria-label="Project screenshots">
-            <a class="shot" href="game/Screenshot 2025-11-09 at 10.26.10 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.26.10 PM.png" alt="Game screen 1" />
+          <div class="shots" data-project="project3" aria-label="Project screenshots">
+            <a href="assets/optimized/game2d-1-1600w.webp" class="shot" data-index="0" data-caption="Game screen 1">
+              <img src="assets/optimized/game2d-1-400w.webp" srcset="assets/optimized/game2d-1-400w.webp 400w, assets/optimized/game2d-1-800w.webp 800w, assets/optimized/game2d-1-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Game screen 1">
             </a>
-            <a class="shot" href="game/Screenshot 2025-11-09 at 10.27.11 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.27.11 PM.png" alt="Game screen 2" />
+            <a href="assets/optimized/game2d-2-1600w.webp" class="shot" data-index="1" data-caption="Game screen 2">
+              <img src="assets/optimized/game2d-2-400w.webp" srcset="assets/optimized/game2d-2-400w.webp 400w, assets/optimized/game2d-2-800w.webp 800w, assets/optimized/game2d-2-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Game screen 2">
             </a>
-            <a class="shot" href="game/Screenshot 2025-11-09 at 10.27.29 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.27.29 PM.png" alt="Game screen 3" />
+            <a href="assets/optimized/game2d-3-1600w.webp" class="shot" data-index="2" data-caption="Game screen 3">
+              <img src="assets/optimized/game2d-3-400w.webp" srcset="assets/optimized/game2d-3-400w.webp 400w, assets/optimized/game2d-3-800w.webp 800w, assets/optimized/game2d-3-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Game screen 3">
             </a>
-            <a class="shot" href="game/Screenshot 2025-11-09 at 10.27.45 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="game/Screenshot 2025-11-09 at 10.27.45 PM.png" alt="Game screen 4" />
+            <a href="assets/optimized/game2d-4-1600w.webp" class="shot" data-index="3" data-caption="Game screen 4">
+              <img src="assets/optimized/game2d-4-400w.webp" srcset="assets/optimized/game2d-4-400w.webp 400w, assets/optimized/game2d-4-800w.webp 800w, assets/optimized/game2d-4-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Game screen 4">
             </a>
           </div>
 
           <footer class="project__foot">
             <p class="quote">“My third project.”</p>
+            <a class="btn btn--ghost" href="#" aria-label="Live demo (not available)">Live →</a>
           </footer>
         </article>
 
         <!-- PROJECT 4 -->
-        <article class="project glass">
+        <article class="project glass reveal">
           <header class="project__head">
             <div>
               <h3 class="project__title">Notes App (UserDefaults + Lock)</h3>
               <p class="project__desc">
-                Password-protected notes, clean transitions, and efficient local data handling.
+                Password‑protected notes, clean transitions, and efficient local data handling.
               </p>
             </div>
             <div class="project__badges">
@@ -209,43 +222,43 @@
             </div>
           </header>
 
-          <div class="shots" aria-label="Project screenshots">
-            <a class="shot" href="notes/Screenshot 2025-11-09 at 10.30.52 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="notes/Screenshot 2025-11-09 at 10.30.52 PM.png" alt="Notes list" />
+          <div class="shots" data-project="project4" aria-label="Project screenshots">
+            <a href="assets/optimized/notes-list-1600w.webp" class="shot" data-index="0" data-caption="Notes list">
+              <img src="assets/optimized/notes-list-400w.webp" srcset="assets/optimized/notes-list-400w.webp 400w, assets/optimized/notes-list-800w.webp 800w, assets/optimized/notes-list-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Notes list">
             </a>
-            <a class="shot" href="notes/Screenshot 2025-11-09 at 10.31.32 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="notes/Screenshot 2025-11-09 at 10.31.32 PM.png" alt="Note detail" />
+            <a href="assets/optimized/notes-detail-1600w.webp" class="shot" data-index="1" data-caption="Note detail">
+              <img src="assets/optimized/notes-detail-400w.webp" srcset="assets/optimized/notes-detail-400w.webp 400w, assets/optimized/notes-detail-800w.webp 800w, assets/optimized/notes-detail-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Note detail">
             </a>
-            <a class="shot" href="notes/Screenshot 2025-11-09 at 10.32.16 PM.png" target="_blank" rel="noopener">
-              <img loading="lazy" src="notes/Screenshot 2025-11-09 at 10.32.16 PM.png" alt="Lock screen" />
+            <a href="assets/optimized/notes-lock-1600w.webp" class="shot" data-index="2" data-caption="Lock screen">
+              <img src="assets/optimized/notes-lock-400w.webp" srcset="assets/optimized/notes-lock-400w.webp 400w, assets/optimized/notes-lock-800w.webp 800w, assets/optimized/notes-lock-1600w.webp 1600w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Lock screen">
             </a>
           </div>
 
           <footer class="project__foot">
             <p class="quote">“My fourth project.”</p>
+            <a class="btn btn--ghost" href="#" aria-label="Live demo (not available)">Live →</a>
           </footer>
         </article>
-
       </div>
     </section>
 
     <section id="about" class="section section--alt">
       <div class="container about">
         <div class="about__media glass">
-          <img loading="lazy" src="h2.png" alt="Habishek portrait" />
+          <img src="assets/optimized/h2-800w.webp" srcset="assets/optimized/h2-400w.webp 400w, assets/optimized/h2-800w.webp 800w, assets/optimized/h2-1200w.webp 1200w" sizes="(max-width: 700px) 400px, 800px" loading="lazy" alt="Habishek portrait" width="400" height="400">
         </div>
 
         <div class="about__text">
           <h2 class="section__title">Info</h2>
           <p class="about__bio glass glass--thin">
-            A Swift developer with a hacker’s curiosity, weaving code, logic, and innovation to build seamless, intelligent apps.
-            Skilled in Python — building products that feel fast, modern, and alive.
+            Hi — I’m Habishek, a Swift developer and video editor. I blend clean code with cinematic storytelling to build apps that feel fast, modern, and alive. <br><br>
+            <strong>For clients:</strong> available for iOS projects & app promos. Based in TamilNadu (IST), remote‑first.
           </p>
 
           <div class="links glass glass--thin">
-            <a href="https://wa.me/918754022178" target="_blank" rel="noopener">WhatsApp →</a>
-            <a href="https://www.instagram.com/iamtitancore/" target="_blank" rel="noopener">Instagram →</a>
-            <a href="https://www.linkedin.com/in/habishek-b-703109371" target="_blank" rel="noopener">LinkedIn →</a>
+            <a href="https://wa.me/918754022178" target="_blank" rel="noopener noreferrer">WhatsApp →</a>
+            <a href="https://www.instagram.com/iamtitancore/" target="_blank" rel="noopener noreferrer">Instagram →</a>
+            <a href="https://www.linkedin.com/in/habishek-b-703109371" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
             <a href="mailto:habishekiosdevloper@gmail.com">Mail →</a>
           </div>
         </div>
@@ -259,5 +272,21 @@
       <p class="muted">Designed & developed with HTML + CSS only.</p>
     </div>
   </footer>
+
+  <!-- Lightbox container (hidden initially) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="image lightbox" hidden>
+    <button class="lightbox__close" aria-label="Close">✕</button>
+    <button class="lightbox__prev" aria-label="Previous image">‹</button>
+    <button class="lightbox__next" aria-label="Next image">›</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Mouse follower element (optional) -->
+  <div id="mouse-follower" class="mouse-follower" aria-hidden="true"></div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
